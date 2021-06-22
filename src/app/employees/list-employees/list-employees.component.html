@@ -1,0 +1,36 @@
+<div class="container">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th *ngFor="let column of headers" scope="col">
+                    {{column}}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of employees;let i=index;">
+                <td>
+                    {{row.ID}}
+                </td>
+                <td>
+                    {{row.FirstName}}
+                </td>
+                <td>
+                    {{row.Email}}
+                </td>
+                <td>
+                    {{row.Gender}}
+                </td>
+                <td>
+                    {{row.Salary}}
+                </td>
+                <td>
+                    <i class="fa fa-trash fa-2x" (click)="deleteRow(i)"></i>&nbsp;
+
+                    <a routerLink="/edit/{{row.ID}}"><i class="fa fa-edit fa-2x"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<router-outlet></router-outlet>

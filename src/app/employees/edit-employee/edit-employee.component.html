@@ -1,0 +1,29 @@
+<div class="container">
+    <form [formGroup]="editform" (ngSubmit)="save(editform.value)" novalidate>
+        <div class="form-row row">
+            <div class="form-group col-md-6">
+                <label for="firstname">First Name</label>
+                <input type="text" class="form-control" id="firstname" name="firstname" formControlName="firstname" placeholder="First Name">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" formControlName="email" placeholder="Email">
+            </div>
+        </div>
+
+        <div class="form-row row">
+            <div class="form-group col-md-6">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" formControlName="gender" class="form-control">
+          <option selected>Male</option>
+          <option>Female</option>
+        </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="salary">Salary</label>
+                <input type="number" class="form-control" id="salary" name="salary" formControlName="salary">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
